@@ -1,0 +1,26 @@
+<ul nz-menu nzMode="inline" class="side-bar">
+  <li nz-menu-item>
+      <a [routerLink]="['/admin','shop']">
+    <span nz-icon nzType="shop" nzTheme="outline"></span> 
+      Tienda
+    </a>
+  </li>
+    <li nz-menu-item> 
+        <a [routerLink]="['/admin','products']">
+      <span nz-icon nzType="shopping-cart" nzTheme="outline"></span> 
+      Productos
+    </a>
+      </li>
+    <li nz-menu-item> 
+        <a [routerLink]="['/admin','invoices']">
+    <span nz-icon nzType="snippets" nzTheme="outline"></span> 
+      Facturas
+    </a>
+  </li>
+  <li nz-menu-item> 
+      <a [routerLink]="['/admin','orders']" routerLink="">
+    <span nz-icon zType="unordered-list" nzTheme="outline"></span> 
+      Ordenes
+    </a>     
+  </li>
+</ul>

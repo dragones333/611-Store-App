@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+//localhost:4200/ -> /admin
+export const routes: Routes = [
+    {path:"", redirectTo:"admin", pathMatch:"full"},
+    {// mover modulos sin tener que copiar comopenetes
+        path: "",
+        loadChildren:()=> import("./pages/pages-module").then(m=>m.PagesModule)
+    }
+];
