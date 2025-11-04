@@ -31,3 +31,18 @@ jobs:
         run: |
           docker push orlando333/store-app:${{ github.sha }}
           docker push orlando333/store-app:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Deploy to AWS
+        uses: appleboy/ssh-action@master
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            docker pull orlando333/store-app:latest
+            cd containers
+            docker compose up -d
